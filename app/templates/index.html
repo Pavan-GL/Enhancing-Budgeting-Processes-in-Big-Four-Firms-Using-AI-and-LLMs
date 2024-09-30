@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Forecast</title>
+</head>
+<body>
+    <h1>Budget Forecast Input</h1>
+    <form action="/forecast" method="post">
+        <label for="total_budget">Total Budget (in crores):</label>
+        <input type="number" id="total_budget" name="Total_Budget" required><br>
+
+        <label for="revenue">Revenue (in crores):</label>
+        <input type="number" id="revenue" name="Revenue" required><br>
+
+        <label for="expenditure">Expenditure (in crores):</label>
+        <input type="number" id="expenditure" name="Expenditure" required><br>
+
+        <label for="gdp">GDP (in crores):</label>
+        <input type="number" id="gdp" name="GDP" required><br>
+
+        <label for="inflation_rate">Inflation Rate (%):</label>
+        <input type="number" step="0.1" id="inflation_rate" name="Inflation_Rate" required><br>
+
+        <label for="unemployment_rate">Unemployment Rate (%):</label>
+        <input type="number" step="0.1" id="unemployment_rate" name="Unemployment_Rate" required><br>
+
+        <label for="interest_rate">Interest Rate (%):</label>
+        <input type="number" step="0.1" id="interest_rate" name="Interest_Rate" required><br>
+
+        <label for="exchange_rate">Exchange Rate (INR to USD):</label>
+        <input type="number" step="0.01" id="exchange_rate" name="Exchange_Rate" required><br>
+
+        <input type="submit" value="Forecast Budget">
+    </form>
+
+    {% if forecasted_values %}
+        <h2>Forecasted Budget: {{ forecasted_values }}</h2>
+    {% endif %}
+</body>
+</html>
